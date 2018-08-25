@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Armageddon
+Comment=Armageddon P2P Cryptocurrency
+Comment[fr]=Armageddon, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Armageddon, eşten eşe kriptografik sanal para birimi
+Exec=armageddon-qt %u
+Terminal=false
+Type=Application
+Icon=armageddon128
+MimeType=x-scheme-handler/armageddon;
+Categories=Office;Finance;
