@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>991</width>
-    <height>568</height>
+    <height>605</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -433,6 +433,9 @@
                <property name="toolTip">
                 <string>Status and/or Mesages from the last Mint Action.</string>
                </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame { color: limegreen; }</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::Panel</enum>
                </property>
@@ -708,7 +711,7 @@ zAGDN are mature when they have more than 20 confirmations AND more than 1 mints
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../armageddon.qrc">
+                    <iconset>
                      <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
                    </property>
                    <property name="shortcut">
@@ -725,7 +728,7 @@ zAGDN are mature when they have more than 20 confirmations AND more than 1 mints
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../armageddon.qrc">
+                    <iconset>
                      <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
                    </property>
                    <property name="shortcut">

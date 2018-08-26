@@ -54,14 +54,14 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (     0, uint256("0x00000a05f96d9b1140cbce50151d879501d3d4bba2b03ff4d93ba89236df9623"));
+    (     0, uint256("0x00000dbd259e3c95b1e2e8f249817da9ca1870b9639fe9e9a8ba09a0247c8f54"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1525587795, // * UNIX timestamp of last checkpoint block
-    319287,     // * total number of transactions between genesis and last checkpoint
+    1,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    4104        // * estimated number of transactions per day after checkpoint
+    1440        // * estimated number of transactions per day after checkpoint
 };
 
 
@@ -103,10 +103,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x86;
-        pchMessageStart[1] = 0x54;
-        pchMessageStart[2] = 0x24;
-        pchMessageStart[3] = 0x67;
+        pchMessageStart[0] = 0xa1;
+        pchMessageStart[1] = 0x7a;
+        pchMessageStart[2] = 0x3c;
+        pchMessageStart[3] = 0x6d;
         vAlertPubKey = ParseHex("04bcbf5f4dab42002143f5b25a2e6fd658dd300508c0fd3c890edfa241edcdd224c9fb62d0a3e86ab655c384b598bd3e92d25fee84774060a0d461f0e9483587e5");
         nDefaultPort = 11800;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Armageddon starting difficulty is 1 / 2^12
@@ -120,14 +120,14 @@ public:
         nTargetSpacing = 1 * 60;  // Armageddon: 1 minute
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 15000000 * COIN;
+        nMaxMoneyOut = 2700000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 200;
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 201;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1533823164; // 20:30pm
+        nZerocoinStartTime = 1535131814; // 
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -143,7 +143,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "08-AUG-2018 - Economy could start to pick up, says Bank of England governor - Remapper";
+        const char* pszTimestamp = "HSBC unveils barrier-free banking services, Hong Kong, 06:27 Thu, 23 Aug 2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -154,17 +154,17 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1533822164;
+        genesis.nTime = 1535130814;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1428462;
+        genesis.nNonce = 368724;
 		
+				
 		hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000a05f96d9b1140cbce50151d879501d3d4bba2b03ff4d93ba89236df9623"));
-        assert(genesis.hashMerkleRoot == uint256("0xc11ddd8969274a8a25f44828ca3895078db9d53447cfc77d8a6fcac8e0505a76"));
-		vSeeds.push_back(CDNSSeedData("nodes.armageddon.pw", "nodes.armageddon.pw")); // Primary DNS Seeder
-		vSeeds.push_back(CDNSSeedData("armageddon.nodes.gyservers.com", "armageddon.nodes.gyservers.com")); // Secondary DNS Seeder
-		vSeeds.push_back(CDNSSeedData("armageddon.seeds.mn.zone", "armageddon.seeds.mn.zone")); // Third party DNS Seeder
-		vSeeds.push_back(CDNSSeedData("armageddon.mnseeds.com", "armageddon.mnseeds.com")); // Third party DNS Seeder
+        assert(hashGenesisBlock == uint256("0x00000dbd259e3c95b1e2e8f249817da9ca1870b9639fe9e9a8ba09a0247c8f54"));
+        assert(genesis.hashMerkleRoot == uint256("0x48fbf0545e56c01a260969c1c68a54c709fbe2a5fbd400d97143f78472400813"));
+		
+		vSeeds.push_back(CDNSSeedData("armageddon.seeds.mn.zone", "armageddon.seeds.mn.zone")); // Primary DNS Seeder
+		vSeeds.push_back(CDNSSeedData("armageddon.mnseeds.com", "armageddon.mnseeds.com")); // Secondary DNS Seeder
 		vSeeds.push_back(CDNSSeedData("209.250.243.131", "209.250.243.131"));         // Single node address
 		vSeeds.push_back(CDNSSeedData("209.250.241.176", "209.250.241.176"));         // Single node address
 		vSeeds.push_back(CDNSSeedData("45.77.239.108", "45.77.239.108"));             // Single node address
@@ -174,7 +174,7 @@ public:
 		
 		
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 60);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
@@ -195,7 +195,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "047da8dd8dd82c7247a2a6e236cc5e4d775e1e08a4ce95362b862685b094492699b4ffacf1f87cedaa5d633835986bb5f5fd4ff458c27bd3c03c9e3281342560c3";
+        strSporkKey = "042d34a6632a386aed9f7b74961ce3eff4bdf40d2bf6575826174f1825080b6c9cac7f84b7bd1eb9347031ebb6f05a5328d796eff2eb0d8c101a75b8bc8f0ab401";
         strObfuscationPoolDummyAddress = "RSQo21b24dD6AvQ2QyAfQFdBHTSw894tJb";
         nStartMasternodePayments = 1516371317; //Wed, 25 Jun 2014 20:36:16 GMT
 
